@@ -1,5 +1,4 @@
-Young Jedi Scomp Link Access
-=================
+![](yj-scomp4.png)
 
 
 * Fork of `swccg-scomp`.
