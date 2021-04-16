@@ -32,7 +32,6 @@
     <script src="js/CardSearchController.js"></script>
     <script src="js/CDFService.js"></script>
     <script src="js/ExportService.js"></script>
-    <!--<script src="js/SWIPExportService.js"></script>-->
     <script src="js/SWIPService.js"></script>
     <script src="js/onLoadError.js"></script>
     <script src="js/onLoadSuccess.js"></script>
@@ -48,17 +47,10 @@
     <!-- Content -->
     <div ng-app="cardSearchApp" ng-controller="CardSearchController" class="cs-main">
 
-
-    <!--
-    <button data-ng-click="exportLightCdf()">Export Light CDF</button>
-    <button data-ng-click="exportDarkCdf()">Export Dark CDF</button>
-    <button data-ng-click="exportSWIP()">Export SWIP</button>
-    -->
-
       <div class="cs-title">
         <div class="cs-title-holder">
           <span>
-            <img src="./scomp.png" class="cs-logo-image"> Scomp Link Access
+            <img src="yj-scomp4.png" class="yj-logo-image" style="width:50%">
           </span>
         </div>
       </div>
@@ -197,21 +189,12 @@
             <div class="cs-searchLabel">Type</div>
             <select data-ng-model="search.type" class="cs-search-input" data-ng-change="searchIfNotEmpty()">
               <option value="ALL">Any</option>
-              <option value="ADMIRALS_ORDER">Admiral's Order</option>
-              <option value="CHARACTER">Character</option>
-              <option value="CREATURE">Creature</option>
-              <option value="DEFENSIVE_SHIELD">Defensive Shield</option>
-              <option value="DEVICE">Device</option>
-              <option value="EFFECT">Effect</option>
-              <option value="EPIC_EVENT">Epic Event</option>
-              <option value="INTERRUPT">Interrupt</option>
-              <option value="JEDI_TEST">Jedi Test</option>
               <option value="LOCATION">Location</option>
-              <option value="OBJECTIVE">Objective</option>
-              <option value="PODRADER">Podracer</option>
-              <option value="STARSHIP">Starship</option>
-              <option value="VEHICLE">Vehicle</option>
+              <option value="CHARACTER">Character</option>
               <option value="WEAPON">Weapon</option>
+              <option value="BATTLE">Battle</option>
+              <option value="STARSHIP">Starship</option>
+              <option value="EFFECT">Effect</option>
             </select>
           </div>
 

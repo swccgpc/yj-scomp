@@ -461,32 +461,36 @@ cardSearchApp.controller('CardSearchController', ['$scope', '$document', '$http'
   loadCachedData();
 
   $http.get('Light.json').success(function(data) {
+    console.log("Loading Light.json");
     addCardsFromJson(data);
     $scope.downloadedData.loadingLight = false;
 
     massageData();
   }).error(function(err) {
-    console.error("Data load failure. Defaulting to text-only");
+    console.error("Light.json Data load failure. Defaulting to text-only");
     $scope.data.textOnly = true;
   });
 
   $http.get('Dark.json').success(function(data) {
+    console.log("Loading Dark.json");
+    //console.log(data);
     addCardsFromJson(data);
     $scope.downloadedData.loadingDark = false;
 
     massageData();
   }).error(function(err) {
-    console.error("Data load failure. Defaulting to text-only");
+    console.error("Dark.json Data load failure. Defaulting to text-only");
     $scope.data.textOnly = true;
   });
 
   $http.get('sets.json').success(function(setsData) {
+    console.log("Loading sets.json");
     $scope.downloadedData.sets = setsData;
     $scope.downloadedData.loadingSets = false;
 
     massageData();
   }).error(function(err) {
-    console.error("Data load failure. Defaulting to text-only");
+    console.error("sets.json Data load failure. Defaulting to text-only");
     $scope.data.textOnly = true;
   });
 
@@ -578,6 +582,7 @@ cardSearchApp.controller('CardSearchController', ['$scope', '$document', '$http'
       card.set = setNameFromSetId(card.set, setNameMapping);
       card.setAbbreviation = CDFService.getSetAbbreviation(card.set);
       card.links = [card.front.imageUrl];
+      console.log(i, card.setAbbreviation, card.titleSortable);
       if (card.back && card.back.imageUrl) {
         card.links.push(card.back.imageUrl);
       }
@@ -653,9 +658,11 @@ cardSearchApp.controller('CardSearchController', ['$scope', '$document', '$http'
     var cards = cardData.cards;
     for (var i = 0; i < cards.length; i++) {
       var card = cards[i];
+      console.log(card);
 
       // Skip legacy cards!
       if (card.legacy) {
+        console.log("Skipping Legacy Card");
         continue;
       }
 
